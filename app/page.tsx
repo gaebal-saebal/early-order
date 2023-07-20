@@ -1,10 +1,12 @@
-import { StyledP, StyledSection } from './MainStyle';
+import { StyledP, StyledSection, StyledDiv, StyledSvg } from './MainStyle';
 
 export default function Home() {
   return (
     <main>
       <StyledSection>
-        <StyledP>ThemeProvider 테스트 중입니다</StyledP>
+        <StyledDiv>
+          <StyledP>ThemeProvider 테스트 중입니다</StyledP>
+        </StyledDiv>
       </StyledSection>
     </main>
   );
