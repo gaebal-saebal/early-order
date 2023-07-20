@@ -6,7 +6,17 @@ const StyledP = styled.p`
 `;
 
 const StyledSection = styled.section`
-  ${({ theme }) => theme.layout.flexCenter}
+  ${({ theme }) => theme.layout.flexCenter};
 `;
 
-export { StyledP, StyledSection };
+const StyledDiv = styled.div`
+  box-shadow: ${({ theme }) => theme.boxShadow};
+  border-radius: ${({ theme }) => theme.borderRadius.large};
+`;
+
+const StyledSvg = styled.svg`
+  &:hover {
+  }
+`;
+
+export { StyledP, StyledSection, StyledDiv, StyledSvg };
