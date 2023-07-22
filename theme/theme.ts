@@ -1,11 +1,18 @@
 const colors = {
   GREEN: '#1CC86E',
   GREEN_LIGHT: '#DAFFC9',
-  BLACK: '#000000',
-  GRAY_40: '#646464',
-  GRAY_30: '#9D9D9D',
-  GRAY_20: '#A3A3A3',
-  GRAY_10: '#DFDFDF',
+  BLACK_00: '#000000',
+  BLACK_11: '#111111',
+  GRAY_64: '#646464',
+  GRAY_78: '#787A77',
+  GRAY_86: '#868686',
+  GRAY_9D: '#9D9D9D',
+  GRAY_A3: '#A3A3A3',
+  GRAY_C7: '#C7C7C7',
+  GRAY_DF: '#DFDFDF',
+  GRAY_E4: '#E4E4E4',
+  GRAY_F3: '#F3F3F3',
+  GRAY_F5: '#F5F5F5',
   WHITE: '#FFFFFF',
 };
 
