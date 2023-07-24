@@ -10,9 +10,7 @@ const colors = {
   GRAY_A3: '#A3A3A3',
   GRAY_C7: '#C7C7C7',
   GRAY_DF: '#DFDFDF',
-  GRAY_E4: '#E4E4E4',
   GRAY_F3: '#F3F3F3',
-  GRAY_F5: '#F5F5F5',
   WHITE: '#FFFFFF',
 };
 
