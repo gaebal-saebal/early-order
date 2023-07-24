@@ -1,13 +1,11 @@
 //버튼스타일
 'use client';
+import { ButtonProps } from '@/types/interface';
 import { styled } from 'styled-components';
-import { ButtonProps } from './Button';
-
-type ButtonStyleProps = ButtonProps;
 
 export const ButtonContainer = styled.button<ButtonProps>`
   width: ${({ width }) => `${width}px`};
-  background-color: ${({ theme, bgColor }) =>
+  /* background-color: ${({ theme, bgColor }) =>
     bgColor ? bgColor : theme.colors.BLACK_00};
   color: white;
   font-size: 16px;
@@ -18,6 +16,6 @@ export const ButtonContainer = styled.button<ButtonProps>`
       : radius === 'medium'
       ? '20px'
       : '30px'};
-  border: 0;
-  height: ${({ radius }) => (radius === 'small' ? '48px' : '45px')};
+  border: 0; */
+  /* height: ${({ radius }) => (radius === 'small' ? '48px' : '45px')}; */
 `;
