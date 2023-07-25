@@ -1,5 +1,5 @@
-import React from "react";
+import { TagContainer } from "./TagStyle";
 
-export default function Tag() {
-  return <div>Tag</div>;
-}
+export const Tag = ({ children }: { children: React.ReactNode }) => {
+  return <TagContainer>{children}</TagContainer>;
+};

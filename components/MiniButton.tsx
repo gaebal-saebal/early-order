@@ -1,5 +1,26 @@
-import React from "react";
+import { ButtonProps } from "@/types/interface";
 
-export default function MiniButton() {
-  return <div>MiniButton</div>;
-}
+export const MiniButton = ({
+  children,
+  radius,
+  fontSize,
+  icon,
+  onClick,
+}: {
+  children: React.ReactNode;
+  radius: ButtonProps;
+  fontSize: ButtonProps;
+  icon?: ButtonProps;
+  onClick?: ButtonProps["onClick"];
+}) => {
+  return (
+    <MiniButton
+      radius={radius}
+      fontSize={fontSize}
+      icon={icon}
+      onClick={onClick}
+    >
+      {children}
+    </MiniButton>
+  );
+};

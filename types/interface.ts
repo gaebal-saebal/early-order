@@ -1,6 +1,10 @@
 export interface ButtonProps {
-  width: number;
+  icons?: boolean;
+  width?: number;
   radius?: string;
   bgColor?: string;
-  // onClick?: (name: string) => void;
+  color?: string;
+  edit?: boolean;
+  fontSize?: number;
+  onClick?: (name: string) => void;
 }

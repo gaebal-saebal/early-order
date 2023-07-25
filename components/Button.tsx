@@ -1,29 +1,40 @@
-// import React from 'react';
-
-import { ButtonProps } from '@/types/interface';
-import { ButtonContainer } from './ButtonStyle';
+import { ButtonProps } from "@/types/interface";
+import { ButtonContainer } from "./ButtonStyle";
 
 const Button = ({
   children,
   width,
-}: // width,
-// radius,
-// bgColor,
-{
+  radius, // themes.borderRadius.(small,medium,large)
+  bgColor,
+  onClick,
+}: {
   children: React.ReactNode;
-  width: number;
-  // width: ButtonProps;
-  // radius: ButtonProps;
-  // bgColor: ButtonProps;
+  // width: number;
+  // radius?:string;
+  // bgColor?:string;
+  width: ButtonProps["width"];
+  radius?: ButtonProps["radius"];
+  bgColor?: ButtonProps["bgColor"];
+  icon?: ButtonProps["icons"];
+  onClick: ButtonProps["onClick"];
 }) => {
   // const { width } = props;
-  return <ButtonContainer width={width}>{children}</ButtonContainer>;
+  return (
+    <ButtonContainer
+      width={width}
+      radius={radius}
+      bgColor={bgColor}
+      onClick={onClick}
+    >
+      {children}
+    </ButtonContainer>
+  );
 };
 
 Button.deafultProps = {
   width: 42,
-  radius: '10',
-  bgColor: 'black',
+  radius: "50",
+  bgColor: "black",
 };
 
 export default Button;
