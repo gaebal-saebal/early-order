@@ -2,7 +2,7 @@ export interface ButtonProps {
   icons?: boolean;
   width?: number;
   radius?: string;
-  bgColor?: string;
+  bgcolor?: string;
   color?: string;
   edit?: boolean;
   fontSize?: number;

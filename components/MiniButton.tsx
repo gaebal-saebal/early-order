@@ -1,26 +1,30 @@
-import { ButtonProps } from "@/types/interface";
+import { ButtonProps } from '@/types/interface';
+import { MiniBtnContainer } from './MiniButtonStyle';
 
 export const MiniButton = ({
   children,
-  radius,
+  width,
   fontSize,
-  icon,
+  icons,
+  color,
   onClick,
 }: {
   children: React.ReactNode;
-  radius: ButtonProps;
-  fontSize: ButtonProps;
-  icon?: ButtonProps;
-  onClick?: ButtonProps["onClick"];
+  width?: ButtonProps['width'];
+  fontSize?: ButtonProps['fontSize'];
+  icons?: ButtonProps['icons'];
+  color?: ButtonProps['color'];
+  onClick?: ButtonProps['onClick'];
 }) => {
   return (
-    <MiniButton
-      radius={radius}
+    <MiniBtnContainer
       fontSize={fontSize}
-      icon={icon}
+      icons={icons}
       onClick={onClick}
+      width={width}
+      color={color}
     >
       {children}
-    </MiniButton>
+    </MiniBtnContainer>
   );
 };
