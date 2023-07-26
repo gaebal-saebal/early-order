@@ -1,4 +1,4 @@
-import Search from '@/components/search/Search';
+
 import { StyledP, StyledSection, StyledDiv, StyledSvg } from './MainStyle';
 import HomeSelected from '@/components/navigation/HomeSelected';
 
@@ -11,6 +11,7 @@ export default function Home() {
           <Search />
         </StyledDiv>
       </StyledSection>
+      <ButtonTest />
     </main>
   );
 }
