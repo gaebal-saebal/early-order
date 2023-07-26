@@ -1,5 +1,6 @@
-import { ButtonTest } from '@/components/testPages/ButtonTest';
+
 import { StyledP, StyledSection, StyledDiv, StyledSvg } from './MainStyle';
+import HomeSelected from '@/components/navigation/HomeSelected';
 
 export default function Home() {
   return (
@@ -9,7 +10,6 @@ export default function Home() {
           <StyledP>ThemeProvider 테스트 중입니다</StyledP>
         </StyledDiv>
       </StyledSection>
-      <ButtonTest />
     </main>
   );
 }
