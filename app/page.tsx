@@ -10,7 +10,6 @@ export default function Home() {
           <StyledP>ThemeProvider 테스트 중입니다</StyledP>
         </StyledDiv>
       </StyledSection>
-      <ButtonTest />
     </main>
   );
 }
