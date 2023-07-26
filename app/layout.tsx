@@ -1,6 +1,8 @@
 import ThemeProviderContainer from '@/app/lib/ThemeProviderContainer';
 import theme from '../theme/theme';
 import StyledComponentsRegistry from './lib/registry';
+import { StyledLayoutContainer, StyledLayout } from './LayoutStyle';
+import LayoutStatusBar from '@/components/layout/LayoutStatusBar';
 
 export const metadata = {
   title: 'Create Next App',
@@ -18,7 +20,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <StyledComponentsRegistry>
-          <ThemeProviderContainer theme={theme}>{children}</ThemeProviderContainer>
+          <ThemeProviderContainer theme={theme}>
+            <StyledLayoutContainer>
+              <StyledLayout>
+                <LayoutStatusBar />
+                {children}
+              </StyledLayout>
+            </StyledLayoutContainer>
+          </ThemeProviderContainer>
         </StyledComponentsRegistry>
       </body>
     </html>
