@@ -8,7 +8,6 @@ export default function Home() {
       <StyledSection>
         <StyledDiv>
           <StyledP>ThemeProvider 테스트 중입니다</StyledP>
-          <Search />
         </StyledDiv>
       </StyledSection>
       <ButtonTest />
