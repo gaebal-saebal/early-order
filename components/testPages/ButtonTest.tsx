@@ -7,7 +7,7 @@ import { Tag } from '@/components/Tag';
 import theme from '@/theme/theme';
 import { styled } from 'styled-components';
 
-const BtnCuston = styled(ButtonContainer)`
+export const BtnCuston = styled(ButtonContainer)`
   width: 200px;
 `;
 

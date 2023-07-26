@@ -1,5 +1,5 @@
 import { StyledP, StyledSection, StyledDiv } from './MainStyle';
-import { ButtonTest } from '@/pages/testPage/ButtonTest';
+import { ButtonTest } from '@/components/testPages/ButtonTest';
 
 export default function Home() {
   return (
