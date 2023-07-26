@@ -9,7 +9,7 @@ const StyledLayout = styled.div`
   max-width: 375px;
   width: 100vw;
   max-height: 812px;
-  height: 100vh;
+  height: 100dvh;
   outline: solid;
 `;
 
