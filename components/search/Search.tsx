@@ -1,6 +1,8 @@
 'use client';
 import React, { ChangeEvent, useState } from 'react';
-import SearchStyle from './SearchStyle';
+import { SearchStyle, InputContainer, DeleteButton } from './SearchStyle';
+import HomeSearch from '../icon/home/HomeSearch';
+import HomeDelete from '../icon/home/HomeDelete';
 
 const Search = () => {
   const [searchText, setSearchText] = useState('');
@@ -13,17 +15,25 @@ const Search = () => {
   const handleInputClick = () => {
     setIsClicked(true);
   };
+
+  const handleDelete = () => {
+    setSearchText('');
+  };
+
   return (
-    <div>
+    <InputContainer isClicked={isClicked}>
+      <HomeSearch />
       <SearchStyle
         type='text'
         placeholder='매장, 위치로 검색하세요'
         onChange={handleInputChange}
         value={searchText}
         onClick={handleInputClick}
-        isClicked={isClicked}
       />
-    </div>
+      <DeleteButton onClick={handleDelete}>
+        {searchText.length > 0 ? <HomeDelete /> : ''}
+      </DeleteButton>
+    </InputContainer>
   );
 };
 
