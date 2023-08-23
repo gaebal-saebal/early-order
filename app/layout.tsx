@@ -3,6 +3,7 @@ import theme from '../theme/theme';
 import StyledComponentsRegistry from './lib/registry';
 import { StyledLayoutContainer, StyledLayout } from './LayoutStyle';
 import LayoutStatusBar from '@/components/layout/LayoutStatusBar';
+import Provider from './lib/Provider';
 
 export const metadata = {
   title: 'Create Next App',
@@ -21,12 +22,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <StyledComponentsRegistry>
           <ThemeProviderContainer theme={theme}>
-            <StyledLayoutContainer>
-              <StyledLayout>
-                <LayoutStatusBar />
-                {children}
-              </StyledLayout>
-            </StyledLayoutContainer>
+            <Provider>
+              <StyledLayoutContainer>
+                <StyledLayout>
+                  <LayoutStatusBar />
+                  {children}
+                </StyledLayout>
+              </StyledLayoutContainer>
+            </Provider>
           </ThemeProviderContainer>
         </StyledComponentsRegistry>
       </body>
