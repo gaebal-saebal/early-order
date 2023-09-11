@@ -14,6 +14,8 @@ import {
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { ShopListInfoTypes } from "@/types/interface";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
 export const ShopList = () => {
   const [shopInfo, setShopinfo] = useState([]);
