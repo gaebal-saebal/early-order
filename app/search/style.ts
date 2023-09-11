@@ -58,8 +58,10 @@ export const RecentHistory = styled.div`
   .search-word {
     margin-left: 10px;
   }
-  .a {
+  .delete-btn {
     cursor: pointer;
+    border: 0;
+    background: none;
   }
 `;
 

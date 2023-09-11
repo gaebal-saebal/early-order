@@ -1,4 +1,4 @@
-import { styled } from 'styled-components';
+import { styled } from "styled-components";
 
 const ShopListContainer = styled.div`
   /* ${({ theme }) => theme.layout.flexCenter}; */
@@ -14,15 +14,16 @@ const ShopListContainer = styled.div`
 
 const ShopDetailContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   height: 104px;
-  width: 252px;
+  width: 300px;
   padding: 20px 18px;
   img {
     width: 98px;
     height: 99px;
     border-radius: 10px;
+    margin-right: 15px;
   }
 `;
 

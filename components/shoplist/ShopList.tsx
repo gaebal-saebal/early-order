@@ -11,26 +11,62 @@ import {
   TagInfo,
   TimeInfo,
 } from "./ShopListStyle";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { ShopListInfoTypes } from "@/types/interface";
 
 export const ShopList = () => {
+  const [shopInfo, setShopinfo] = useState([]);
+
   const getShopInfo = async () => {
-    await fetch("/api/shop/getInformaion")
-      .then((res) => res.json())
-      .then((data) => console.log(data))
+    await axios("/api/shop/getInformation")
+      // .then((res) => res.json())
+      .then((res) => {
+        setShopinfo(res.data);
+        console.log("#data", res.data);
+      })
       .catch((err) => console.log(err));
   };
 
   useEffect(() => {
     getShopInfo();
+    console.log("#shopInfo", shopInfo);
   }, []);
   return (
     <>
-      <ShopListContainer>
-        <ShopDetailContainer>
-          <Image src="" alt="shop-img" />
-          <ShopDetailWrapper>
+      {/* <ShopListContainer> */}
+      {/* <ShopDetailContainer>
+          <Image src="" alt="shop-img" /> */}
+      {shopInfo.map((item: ShopListInfoTypes, idx: number) => {
+        return (
+          <ShopListContainer key={idx}>
+            <ShopDetailContainer>
+              <Image src={item.imgURL} width="300" height="500" alt="shop" />
+              <ShopDetailWrapper>
+                <TagInfo>바로 수령</TagInfo>
+                <h4>{item.name}</h4>
+                <DetailInfo>
+                  <div className="datail-wrapper">
+                    <HomeLocationSmall />
+                    <p>도보 5분</p>
+                  </div>
+                  <div className="datail-wrapper">
+                    <HomeClockSmall />
+                    <p>바로 수령</p>
+                  </div>
+                </DetailInfo>
+                <TimeInfo>
+                  <p className="open-status">영업 중</p>
+                  <p className="lastorder-time">21:00 라스트오더</p>
+                </TimeInfo>
+              </ShopDetailWrapper>
+            </ShopDetailContainer>
+          </ShopListContainer>
+        );
+      })}
+      {/* <ShopDetailWrapper>
             <TagInfo>바로 수령</TagInfo>
+          
             <h4>셀렉토 고대점</h4>
             <DetailInfo>
               <div className="datail-wrapper">
@@ -46,9 +82,10 @@ export const ShopList = () => {
               <p className="open-status">영업 중</p>
               <p className="lastorder-time">21:00 라스트오더</p>
             </TimeInfo>
-          </ShopDetailWrapper>
-        </ShopDetailContainer>
-      </ShopListContainer>
+          </ShopDetailWrapper> */}
+      {/* </ShopDetailContainer>
+      </ShopListContainer> */}
+      {/* </ShopListContainer> */}
     </>
   );
 };

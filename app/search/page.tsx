@@ -1,3 +1,5 @@
+"use client";
+
 import Button from "@/components/button/Button";
 import Search from "@/components/search/Search";
 import { ShopList } from "@/components/shoplist/ShopList";
@@ -15,9 +17,29 @@ import {
   WholeContainer,
 } from "./style";
 import { MiniButton } from "@/components/button/MiniButton";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { ShopListInfoTypes } from "@/types/interface";
+import Carousel from "@/components/carousel/Carousel";
 
 const SearchPage = () => {
-  const arr = ["아메리카노", "메가커피", "버블티", "바로수령"];
+  const [searchHistory, setSearchHistory] = useState([]);
+  const [iseDeleted, setIsDeleted] = useState(false);
+  const [removeAll, setRemoveAll] = useState(false);
+  // 최근 검색어
+  const getSearchHistory = () => {
+    // db 구축되면 url 변경 예정
+    axios("/api/shop/getInformation")
+      .then((res) => {
+        setSearchHistory(res.data);
+        console.log("#recentData", res.data);
+      })
+      .catch((error) => console.log(error));
+  };
+
+  useEffect(() => {
+    getSearchHistory();
+  }, []);
   const BottomNav = () => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -31,6 +53,22 @@ const SearchPage = () => {
       <circle cx="31.5" cy="3" r="3" fill="#E6E6E6" />
     </svg>
   );
+  const handleCancleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target) {
+      setRemoveAll(true);
+    }
+  };
+
+  const handleDeleteSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log("##", e);
+    console.log("###", e.target);
+
+    if (e.target) {
+      setIsDeleted(true);
+      console.log("#isDelete", iseDeleted);
+    }
+    // setIsDeleted(true);
+  };
   return (
     <WholeContainer>
       <SearchContainer>
@@ -47,21 +85,30 @@ const SearchPage = () => {
       <div>
         <RecentNav>
           <Text>최근 검색어</Text>
-          <MiniButton fontSize={12}>전체 삭제</MiniButton>
+          <MiniButton fontSize={12} onClick={handleCancleSearch}>
+            전체 삭제
+          </MiniButton>
         </RecentNav>
-        {arr.map((item: string, idx: number) => {
-          return (
-            <RecentHistory>
-              <div className="recent-words">
-                <HomeHistory />
-                <div className="search-word">{item}</div>
-              </div>
-              <div className="a">
-                <HomeHistoryDelete />
-              </div>
-            </RecentHistory>
-          );
-        })}
+        {/* 연습 */}
+        <Carousel />
+        {!removeAll
+          ? searchHistory.map((item: ShopListInfoTypes, idx: number) => {
+              return (
+                <RecentHistory key={idx}>
+                  <div className="recent-words">
+                    <HomeHistory />
+                    <div className="search-word">{item.name}</div>
+                  </div>
+                  <button
+                    className="delete-btn"
+                    onClick={handleDeleteSearch(idx)}
+                  >
+                    <HomeHistoryDelete />
+                  </button>
+                </RecentHistory>
+              );
+            })
+          : null}
       </div>
     </WholeContainer>
   );

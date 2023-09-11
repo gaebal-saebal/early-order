@@ -6,5 +6,15 @@ export interface ButtonProps {
   color?: string;
   edit?: boolean;
   fontSize?: number;
-  onClick?: (name: string) => void;
+  onClick?: (name?: any) => void;
+}
+
+export interface ShopListInfoTypes {
+  name?: string;
+  imgURL: string;
+  address?: string;
+  dayOff?: string;
+  closeAt?: string;
+  openAt?: string;
+  _id?: string;
 }
