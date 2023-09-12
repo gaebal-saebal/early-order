@@ -21,6 +21,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { ShopListInfoTypes } from "@/types/interface";
 import Carousel from "@/components/carousel/Carousel";
+import "swiper/css";
+import Link from "next/link";
 
 const SearchPage = () => {
   const [searchHistory, setSearchHistory] = useState([]);
@@ -54,6 +56,7 @@ const SearchPage = () => {
     </svg>
   );
   const handleCancleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    // db 구축시 추후 변경 예정
     if (e.target) {
       setRemoveAll(true);
     }
@@ -69,18 +72,18 @@ const SearchPage = () => {
     }
     // setIsDeleted(true);
   };
+
   return (
     <WholeContainer>
       <SearchContainer>
-        <Search></Search>
-        <CancleBtn>취소</CancleBtn>
+        <Search />
+        <Link href={"/"} className="link">
+          <CancleBtn>취소 </CancleBtn>
+        </Link>
       </SearchContainer>
       <RecentShopContainer>
         <Text>최근 검색 매장</Text>
         <ShopList />
-        <div className="bottom-nav">
-          <BottomNav />
-        </div>
       </RecentShopContainer>
       <div>
         <RecentNav>

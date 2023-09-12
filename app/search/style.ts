@@ -9,7 +9,7 @@ export const WholeContainer = styled.div`
 
 export const SearchContainer = styled.div`
   display: flex;
-
+  align-items: center;
   /* flex-direction: row; */
 `;
 
