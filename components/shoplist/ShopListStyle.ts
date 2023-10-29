@@ -1,5 +1,32 @@
 import { styled } from "styled-components";
 
+const ShopListWholeContainer = styled.div`
+  .swiper {
+    width: 100%;
+    height: 180px;
+    display: flex;
+  }
+
+  .swiper-slide {
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 89px;
+    height: 89px;
+    object-fit: cover;
+  }
+  .swiper-pagination {
+  }
+
+  .swiper-pagination-bullet {
+    --swiper-pagination-color: grey;
+  }
+`;
 const ShopListContainer = styled.div`
   /* ${({ theme }) => theme.layout.flexCenter}; */
   display: flex;
@@ -7,9 +34,9 @@ const ShopListContainer = styled.div`
   align-items: center;
   box-shadow: ${({ theme }) => theme.boxShadow};
   border-radius: ${({ theme }) => theme.borderRadius.small};
-  width: 335px;
+  width: 325px;
   height: 139px;
-  margin: 0;
+  margin: 5px 0;
 `;
 
 const ShopDetailContainer = styled.div`
@@ -18,7 +45,8 @@ const ShopDetailContainer = styled.div`
   align-items: center;
   height: 104px;
   width: 300px;
-  padding: 20px 18px;
+  padding: 12px;
+
   img {
     width: 98px;
     height: 99px;
@@ -34,6 +62,7 @@ const ShopDetailWrapper = styled.div`
   height: 104px;
   h4 {
     line-height: 130%;
+    text-align: left;
     margin: 6px 0 0 0;
   }
 `;
@@ -107,6 +136,7 @@ const TimeInfo = styled.div`
 `;
 
 export {
+  ShopListWholeContainer,
   ShopListContainer,
   ShopDetailContainer,
   ShopDetailWrapper,

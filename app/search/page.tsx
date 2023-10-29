@@ -20,9 +20,10 @@ import { MiniButton } from "@/components/button/MiniButton";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { ShopListInfoTypes } from "@/types/interface";
-import Carousel from "@/components/carousel/Carousel";
 import "swiper/css";
 import Link from "next/link";
+import { SwiperSlider } from "@/components/Swiper/SwiperSlider";
+import { SwiperSlideItem } from "@/components/Swiper/SwiperSlideItem";
 
 const SearchPage = () => {
   const [searchHistory, setSearchHistory] = useState([]);
@@ -42,6 +43,7 @@ const SearchPage = () => {
   useEffect(() => {
     getSearchHistory();
   }, []);
+
   const BottomNav = () => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -55,27 +57,42 @@ const SearchPage = () => {
       <circle cx="31.5" cy="3" r="3" fill="#E6E6E6" />
     </svg>
   );
-  const handleCancleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleCancleSearch = (e: React.ChangeEvent<HTMLButtonElement>) => {
     // db 구축시 추후 변경 예정
     if (e.target) {
       setRemoveAll(true);
     }
   };
 
-  const handleDeleteSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleDeleteSearch = (e: React.MouseEvent<HTMLButtonElement>) => {
     console.log("##", e);
     console.log("###", e.target);
 
-    if (e.target) {
-      setIsDeleted(true);
-      console.log("#isDelete", iseDeleted);
-    }
-    // setIsDeleted(true);
+    setIsDeleted(true);
   };
 
+  const BackBtn = (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="10"
+      height="16"
+      viewBox="0 0 10 16"
+      fill="none"
+    >
+      <path
+        d="M9 1L2 8L9 15"
+        stroke="#646464"
+        stroke-width="2"
+        stroke-linecap="round"
+      />
+    </svg>
+  );
   return (
     <WholeContainer>
       <SearchContainer>
+        <Link style={{ marginRight: "25px" }} href={"/"}>
+          {BackBtn}
+        </Link>
         <Search />
         <Link href={"/"} className="link">
           <CancleBtn>취소 </CancleBtn>
@@ -92,19 +109,19 @@ const SearchPage = () => {
             전체 삭제
           </MiniButton>
         </RecentNav>
-        {/* 연습 */}
-        <Carousel />
         {!removeAll
           ? searchHistory.map((item: ShopListInfoTypes, idx: number) => {
               return (
-                <RecentHistory key={idx}>
+                <RecentHistory key={item._id}>
                   <div className="recent-words">
                     <HomeHistory />
                     <div className="search-word">{item.name}</div>
                   </div>
                   <button
                     className="delete-btn"
-                    onClick={handleDeleteSearch(idx)}
+                    onClick={(e) => {
+                      handleDeleteSearch(e);
+                    }}
                   >
                     <HomeHistoryDelete />
                   </button>

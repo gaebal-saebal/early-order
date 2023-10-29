@@ -8,6 +8,7 @@ import {
   ShopDetailContainer,
   ShopDetailWrapper,
   ShopListContainer,
+  ShopListWholeContainer,
   TagInfo,
   TimeInfo,
 } from "./ShopListStyle";
@@ -37,44 +38,53 @@ export const ShopList = () => {
   }, []);
 
   return (
-    <Swiper
-      modules={[Pagination]}
-      spaceBetween={50}
-      slidesPerView={1}
-      onSlideChange={() => console.log("#slide change")}
-      onSwiper={(swiper) => console.log(swiper)}
-      pagination={true}
-      className="mySwiper"
-    >
-      {shopInfo.map((item: ShopListInfoTypes, idx: number) => {
-        return (
-          <SwiperSlide className="swiper-slide">
-            <ShopListContainer key={item._id}>
-              <ShopDetailContainer>
-                <Image src={item.imgURL} width="300" height="500" alt="shop" />
-                <ShopDetailWrapper>
-                  <TagInfo>바로 수령</TagInfo>
-                  <h4>{item.name}</h4>
-                  <DetailInfo>
-                    <div className="datail-wrapper">
-                      <HomeLocationSmall />
-                      <p>도보 5분</p>
-                    </div>
-                    <div className="datail-wrapper">
-                      <HomeClockSmall />
-                      <p>바로 수령</p>
-                    </div>
-                  </DetailInfo>
-                  <TimeInfo>
-                    <p className="open-status">영업 중</p>
-                    <p className="lastorder-time">21:00 라스트오더</p>
-                  </TimeInfo>
-                </ShopDetailWrapper>
-              </ShopDetailContainer>
-            </ShopListContainer>
-          </SwiperSlide>
-        );
-      })}
-    </Swiper>
+    <ShopListWholeContainer>
+      <Swiper
+        modules={[Pagination]}
+        spaceBetween={50}
+        slidesPerView={1}
+        onSlideChange={() => console.log("#slide change")}
+        onSwiper={(swiper) => console.log(swiper)}
+        pagination={true}
+        className="swiper"
+      >
+        {shopInfo.map((item: ShopListInfoTypes, idx: number) => {
+          return (
+            <div className="swiper-wrapper">
+              <SwiperSlide className="swiper-slide">
+                <ShopListContainer key={item._id}>
+                  <ShopDetailContainer>
+                    <Image
+                      src={item.imgURL}
+                      width="300"
+                      height="500"
+                      alt="shop"
+                    />
+                    <ShopDetailWrapper>
+                      <TagInfo>바로 수령</TagInfo>
+                      <h4>{item.name}</h4>
+                      <DetailInfo>
+                        <div className="datail-wrapper">
+                          <HomeLocationSmall />
+                          <p>도보 5분</p>
+                        </div>
+                        <div className="datail-wrapper">
+                          <HomeClockSmall />
+                          <p>바로 수령</p>
+                        </div>
+                      </DetailInfo>
+                      <TimeInfo>
+                        <p className="open-status">영업 중</p>
+                        <p className="lastorder-time">21:00 라스트오더</p>
+                      </TimeInfo>
+                    </ShopDetailWrapper>
+                  </ShopDetailContainer>
+                </ShopListContainer>
+              </SwiperSlide>
+            </div>
+          );
+        })}
+      </Swiper>
+    </ShopListWholeContainer>
   );
 };
