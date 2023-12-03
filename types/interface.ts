@@ -16,5 +16,5 @@ export interface ShopListInfoTypes {
   dayOff?: string;
   closeAt?: string;
   openAt?: string;
-  _id?: string;
+  _id?: any;
 }
