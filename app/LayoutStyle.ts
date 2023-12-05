@@ -6,6 +6,8 @@ const StyledLayoutContainer = styled.div`
 `;
 
 const StyledLayout = styled.div`
+  position: relative;
+
   max-width: 375px;
   width: 100vw;
   max-height: 812px;
