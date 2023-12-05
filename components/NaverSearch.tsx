@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const NaverSearch = () => {
   const [search, setSearch] = useState(null);
-  const axios = require('axios');
+  const axios = require("axios");
   // const client = axios.create({
   //   headers: {
   //     'X-Naver-Client-Id': process.env.NEXT_PUBLIC_SEARCH_CLIENTID,
@@ -13,19 +13,36 @@ const NaverSearch = () => {
   //   },
   //   responseType: 'json',
   // });
+
+  const searchApi = axios.create({
+    baseURL: "https://openapi.naver.com/v1/search/local.json",
+    method: "get",
+  });
+  searchApi.interceptors.request.use(
+    (config: { headers: { [x: string]: string } }) => {
+      (config.headers["Content-type"] = "application/json; charset=UTF-8"),
+        (config.headers["Accept"] = "application");
+      return config;
+    },
+    (err: any) => {
+      return Promise.reject(err);
+    }
+  );
+
   const getData = () => {
-    axios
-      // client
-      .get('https://openapi.naver.com/v1/search/local.json', {
+    searchApi
+      .get("/", {
         headers: {
-          'X-Naver-Client-Id': 'zDhcifu_x3ZHDwBTw26P',
-          'X-Naver-Client-Secret': 'bpZeT0yj_h',
-          'Content-Type': 'application/json',
+          "X-Naver-Client-Id": "zDhcifu_x3ZHDwBTw26P",
+          "X-Naver-Client-Secret": "bpZeT0yj_h",
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+          credentials: "include",
         },
         params: {
-          query: '카페',
+          query: "카페",
           display: 5,
-          sort: 'random',
+          sort: "random",
         },
       })
       .then((res: any) => {
@@ -45,7 +62,7 @@ const NaverSearch = () => {
           } else if (error.request) {
             console.log(error.toJSON());
           } else {
-            console.log('Error', error.message);
+            console.log("Error", error.message);
           }
         }
       );
