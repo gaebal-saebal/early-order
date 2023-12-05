@@ -4,6 +4,7 @@ import StyledComponentsRegistry from './lib/registry';
 import { StyledLayoutContainer, StyledLayout } from './LayoutStyle';
 import LayoutStatusBar from '@/components/layout/LayoutStatusBar';
 import Provider from './lib/Provider';
+import Footer from '@/components/footer/Footer';
 
 export const metadata = {
   title: '얼리오더',
@@ -27,6 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <StyledLayout>
                   <LayoutStatusBar />
                   {children}
+                  <Footer />
                 </StyledLayout>
               </StyledLayoutContainer>
             </Provider>
