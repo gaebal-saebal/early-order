@@ -25,7 +25,9 @@ const InputContainer = styled.div<InputProps>`
   justify-content: space-between;
   background-color: ${({ theme, isClicked }) =>
     isClicked ? theme.colors.WHITE : theme.colors.GRAY_F3};
-  border: 1px solid ${({ theme }) => theme.colors.BLACK_00};
+  /* border: 1px solid ${({ theme }) => theme.colors.BLACK_00}; */
+  border: 1px solid
+    ${({ theme, isClicked }) => (isClicked ? theme.colors.BLACK_00 : 'none')};
 `;
 
 const DeleteButton = styled.button`
