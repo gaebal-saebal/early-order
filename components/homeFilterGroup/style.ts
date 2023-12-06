@@ -1,5 +1,5 @@
-'use client';
-import { styled } from 'styled-components';
+"use client";
+import { styled } from "styled-components";
 
 const HomeNav = styled.div`
   display: flex;
@@ -69,6 +69,7 @@ const FilterBtn = styled.button`
 const OrderSection = styled.div`
   /* border: 1px solid black; */
   display: flex;
+  flex-direction: column;
   width: 100%;
   height: 338px;
   position: relative;
@@ -77,11 +78,14 @@ const OrderSection = styled.div`
   z-index: 999;
   border-radius: 20px 20px 0 0;
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
+  .list-info {
+    margin: 20px 0 10px 20px;
+  }
 `;
 
 const OrderBtn = styled.div`
   display: flex;
-  width: 100%;
+  /* width: 100%; */
   padding: 35px 58px 9px 58px;
   height: 30px;
   justify-content: space-between;
@@ -96,6 +100,10 @@ const OrderBtn = styled.div`
 `;
 const CardWrapper = styled.div`
   display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: auto;
 `;
 
 export {
