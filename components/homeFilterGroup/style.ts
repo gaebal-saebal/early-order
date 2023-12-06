@@ -1,5 +1,5 @@
-"use client";
-import { styled } from "styled-components";
+'use client';
+import { styled } from 'styled-components';
 
 const HomeNav = styled.div`
   display: flex;
@@ -57,7 +57,7 @@ const FilterWrapper = styled.div`
 `;
 
 const FilterBtn = styled.button`
-  padding: 7px 10px;
+  padding: 5px 10px;
   border-radius: 20px;
   border: 1px solid var(--line, #dfdfdf);
   background-color: white;
@@ -78,32 +78,78 @@ const OrderSection = styled.div`
   z-index: 999;
   border-radius: 20px 20px 0 0;
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
+
+  .top-btn-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+  .top-btn {
+    width: 44px;
+    height: 4px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background-color: ${({ theme }) => theme.colors.GRAY_DF};
+  }
+
   .list-info {
-    margin: 20px 0 10px 20px;
+    margin: 20px 0 5px 20px;
   }
 `;
 
 const OrderBtn = styled.div`
   display: flex;
-  /* width: 100%; */
-  padding: 35px 58px 9px 58px;
+  padding: 20px 58px 0px 58px;
   height: 30px;
   justify-content: space-between;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.GRAY_F3};
+  border-bottom: 2px solid ${({ theme }) => theme.colors.GRAY_F3};
   button {
     border: none;
     background-color: transparent;
     font-size: 16px;
     font-weight: 600;
     color: ${({ theme }) => theme.colors.BLACK_11};
+    cursor: pointer;
+    padding-bottom: 29px;
+  }
+  .order-left-btn {
+    border-bottom: 2px solid ${({ theme }) => theme.colors.BLACK_11};
+  }
+  .order-right-btn {
+    color: ${({ theme }) => theme.colors.GRAY_A3};
   }
 `;
 const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   overflow: auto;
+
+  .list-info {
+    display: flex;
+    height: 100%;
+    color: ${({ theme }) => theme.colors.GRAY_78};
+    font-size: 12px;
+    font-weight: 500;
+    /* line-height: 150%; */
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .text {
+    text-align: center;
+    margin-left: 3px;
+  }
+  .shop-card-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 export {
