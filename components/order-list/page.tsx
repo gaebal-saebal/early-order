@@ -14,7 +14,7 @@ import Button from '../button/Button';
 
 const OrderList = () => {
   const [curretTab, setCurrentTab] = useState(0);
-  // const tabArr = ['리스트로 주문', '간편 주문'];
+
   const tabArr = [
     { tabName: '리스트로 주문', idx: 0 },
     { tabName: '간편 주문', idx: 1 },
@@ -43,15 +43,8 @@ const OrderList = () => {
             </li>
           );
         })}
-        {/* <button className='order-left-btn'>리스트로 주문</button> */}
-        {/* <button className='order-right-btn'>간편 주문</button> */}
       </OrderBtn>
       <CardWrapper>
-        {/* <div className='list-info'>
-          <HomeInfo />
-          <div className='text'> 가장 가까운 매장 순서로 정렬합니다.</div>
-        </div> */}
-        {/* <div className='shop-card-wrapper'> */}
         {curretTab === 0 ? (
           <>
             <div className='list-info'>
