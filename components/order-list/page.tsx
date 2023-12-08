@@ -11,9 +11,13 @@ import {
 } from './style';
 import OrderSimple from '../icon/order/OrderSimple';
 import Button from '../button/Button';
+// import { useRouter } from 'next/router';
+import { usePathname, useRouter } from 'next/navigation';
+import ListInfo from '../shoplist/ListInfo';
 
 const OrderList = () => {
   const [curretTab, setCurrentTab] = useState(0);
+  const router = useRouter();
 
   const tabArr = [
     { tabName: '리스트로 주문', idx: 0 },
@@ -47,19 +51,28 @@ const OrderList = () => {
       <CardWrapper>
         {curretTab === 0 ? (
           <>
-            <div className='list-info'>
+            {/* <div className='list-info'>
               <HomeInfo />
               <div className='text'> 가장 가까운 매장 순서로 정렬합니다.</div>
-            </div>
+            </div> */}
+            <ListInfo />
             <ShopCard />
           </>
         ) : (
           <SimpleOrderSection>
             <OrderSimple />
             <span>빠르게 주문해보세요!</span>
-            <Button width={189} color='white'>
+            {/* <link href='/simple-order'> */}
+            <Button
+              width={189}
+              color='white'
+              onClick={() => {
+                router.push('/simple-order');
+              }}
+            >
               바로 등록하기
             </Button>
+            {/* </link> */}
           </SimpleOrderSection>
         )}
         {/* </div> */}

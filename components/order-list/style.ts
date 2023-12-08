@@ -64,15 +64,13 @@ const CardWrapper = styled.div`
   align-items: center;
   overflow: auto;
 
-  .list-info {
+  /* .list-info {
     display: flex;
     width: 100%;
     height: 100%;
     color: ${({ theme }) => theme.colors.GRAY_78};
     font-size: 12px;
     font-weight: 500;
-    /* line-height: 150%; */
-    /* flex-direction: column; */
     text-align: center;
     align-items: center;
     justify-content: flex-start;
@@ -81,7 +79,7 @@ const CardWrapper = styled.div`
   .text {
     text-align: center;
     margin-left: 3px;
-  }
+  } */
 
   .shop-card-wrapper {
     width: 100%;

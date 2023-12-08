@@ -13,11 +13,12 @@ const SearchStyle = styled.input`
   background-color: transparent;
 `;
 
-const InputContainer = styled.form<InputProps>`
+const InputContainer = styled.div<InputProps>`
   display: flex;
   align-items: center;
   position: relative;
-  width: ${(props: InputProps) => (props.isClicked ? '294px' : '335px')};
+  width: 300px;
+  /* width: ${(props: InputProps) => (props.isClicked ? '294px' : '335px')}; */
   transition: 0.5s;
   height: 22px;
   border-radius: 10px;
