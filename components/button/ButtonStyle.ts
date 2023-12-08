@@ -20,4 +20,5 @@ export const ButtonContainer = styled.button<ButtonProps>`
   text-align: center;
   border: 0;
   height: ${({ radius }) => (radius === 'small' ? '48px' : '45px')};
+  cursor: pointer;
 `;

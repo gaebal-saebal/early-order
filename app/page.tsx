@@ -1,16 +1,11 @@
 import NaverMap from '@/components/NaverMap';
-import NaverSearch from '@/components/NaverSearch';
-import { MiniButton } from '@/components/button/MiniButton';
 import {
-  CardWrapper,
   FilterBtn,
   FilterContainer,
   FilterWrapper,
   HomeLoactionContainer,
   HomeNav,
   LocationIcon,
-  OrderBtn,
-  OrderSection,
   UnderArrow,
 } from '@/components/homeFilterGroup/style';
 import HomeFilter from '@/components/icon/home/HomeFilter';
@@ -21,9 +16,7 @@ import HomeFilterPrice from '@/components/icon/home/HomeFilterPrice';
 import HomeLocationBottomArrow from '@/components/icon/home/HomeLoactionBottomArrow';
 import Search from '@/components/search/Search';
 import { SearchContainer } from './search/style';
-import { ShopList } from '@/components/shoplist/ShopList';
-import { ShopCard } from '@/components/shoplist/ShopCard';
-import HomeInfo from '@/components/icon/home/HomeInfo';
+import OrderList from '@/components/order-list/page';
 
 export default function Home() {
   return (
@@ -62,24 +55,7 @@ export default function Home() {
         </FilterWrapper>
         <NaverMap lat={37.579272} lng={126.9860833} />
       </FilterContainer>
-      <OrderSection>
-        <div className='top-btn-wrapper'>
-          <div className='top-btn'></div>
-        </div>
-        <OrderBtn>
-          <button className='order-left-btn'>리스트로 주문</button>
-          <button className='order-right-btn'>간편 주문</button>
-        </OrderBtn>
-        <CardWrapper>
-          <div className='list-info'>
-            <HomeInfo />
-            <div className='text'> 가장 가까운 매장 순서로 정렬합니다.</div>
-          </div>
-          <div className='shop-card-wrapper'>
-            <ShopCard />
-          </div>
-        </CardWrapper>
-      </OrderSection>
+      <OrderList />
     </main>
   );
 }
