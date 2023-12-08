@@ -13,7 +13,7 @@ const SearchStyle = styled.input`
   background-color: transparent;
 `;
 
-const InputContainer = styled.div<InputProps>`
+const InputContainer = styled.form<InputProps>`
   display: flex;
   align-items: center;
   position: relative;
