@@ -18,11 +18,9 @@ const ShopDetailsContainer = styled.div`
   border-radius: 20px 20px 0 0;
   background-color: white;
   position: relative;
-
   top: -35px;
   z-index: 998;
-  /* overflow-y: scroll; */
-  /* margin-top: -40px; */
+
   .Btn-style {
     display: flex;
     width: 100%;
@@ -32,7 +30,6 @@ const ShopDetailsContainer = styled.div`
 `;
 
 const ShopTitleInfo = styled.div`
-  /* background-color: beige; */
   display: flex;
   flex-direction: column;
   align-items: center;
