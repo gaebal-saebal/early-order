@@ -4,15 +4,14 @@ import { MouseEvent, useState } from 'react';
 import HomeInfo from '../icon/home/HomeInfo';
 import { ShopCard } from '../shoplist/ShopCard';
 import {
-  OrderSection,
-  OrderBtn,
+  SectionWrapper,
+  BtnStyle,
   CardWrapper,
   SimpleOrderSection,
 } from './style';
 import OrderSimple from '../icon/order/OrderSimple';
 import Button from '../button/Button';
-// import { useRouter } from 'next/router';
-import { usePathname, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import ListInfo from '../shoplist/ListInfo';
 
 const OrderList = () => {
@@ -29,11 +28,11 @@ const OrderList = () => {
   };
 
   return (
-    <OrderSection>
+    <SectionWrapper>
       <div className='top-btn-wrapper'>
         <div className='top-btn'></div>
       </div>
-      <OrderBtn>
+      <BtnStyle>
         {tabArr.map((tab, idx) => {
           return (
             <li className={curretTab === idx ? 'clicked-tab' : 'tab'}>
@@ -47,14 +46,10 @@ const OrderList = () => {
             </li>
           );
         })}
-      </OrderBtn>
+      </BtnStyle>
       <CardWrapper>
         {curretTab === 0 ? (
           <>
-            {/* <div className='list-info'>
-              <HomeInfo />
-              <div className='text'> 가장 가까운 매장 순서로 정렬합니다.</div>
-            </div> */}
             <ListInfo />
             <ShopCard />
           </>
@@ -77,7 +72,7 @@ const OrderList = () => {
         )}
         {/* </div> */}
       </CardWrapper>
-    </OrderSection>
+    </SectionWrapper>
   );
 };
 
