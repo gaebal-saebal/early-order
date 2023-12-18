@@ -11,6 +11,7 @@ const colors = {
   GRAY_C7: '#C7C7C7',
   GRAY_DF: '#DFDFDF',
   GRAY_F3: '#F3F3F3',
+  GRAY_50: '#505050',
   WHITE: '#FFFFFF',
 };
 

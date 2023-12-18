@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const OrderSection = styled.div`
+const SectionWrapper = styled.div`
   /* border: 1px solid black; */
   display: flex;
   flex-direction: column;
@@ -34,7 +34,7 @@ const OrderSection = styled.div`
   }
 `;
 
-const OrderBtn = styled.ul`
+const BtnStyle = styled.ul`
   display: flex;
   padding: 15px 58px 0px 58px;
   height: 30px;
@@ -44,7 +44,7 @@ const OrderBtn = styled.ul`
   button {
     border: none;
     background-color: transparent;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
     color: ${({ theme }) => theme.colors.BLACK_11};
     cursor: pointer;
@@ -62,17 +62,16 @@ const CardWrapper = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  overflow: auto;
+  overflow-x: scroll;
+  height: 200px;
 
-  .list-info {
+  /* .list-info {
     display: flex;
     width: 100%;
     height: 100%;
     color: ${({ theme }) => theme.colors.GRAY_78};
     font-size: 12px;
     font-weight: 500;
-    /* line-height: 150%; */
-    /* flex-direction: column; */
     text-align: center;
     align-items: center;
     justify-content: flex-start;
@@ -81,13 +80,16 @@ const CardWrapper = styled.div`
   .text {
     text-align: center;
     margin-left: 3px;
-  }
+  } */
 
   .shop-card-wrapper {
     width: 100%;
     display: flex;
     /* align-items: center;
     justify-content: center; */
+  }
+  .btn-style {
+    margin: 30px 0;
   }
 `;
 
@@ -108,4 +110,4 @@ const SimpleOrderSection = styled.div`
   }
 `;
 
-export { OrderBtn, CardWrapper, OrderSection, SimpleOrderSection };
+export { BtnStyle, CardWrapper, SectionWrapper, SimpleOrderSection };
