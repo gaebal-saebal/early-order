@@ -10,19 +10,24 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
+    "@tanstack/react-query": "^4.33.0",
+    "@types/mongodb": "^4.0.7",
     "@types/node": "20.3.2",
     "@types/react": "18.2.14",
     "@types/react-dom": "18.2.6",
     "@types/react-redux": "^7.1.25",
     "@types/redux": "^3.6.0",
     "@types/redux-actions": "^2.6.2",
+    "axios": "^1.4.0",
     "next": "13.4.7",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "styled-components": "^6.0.1",
+    "swiper": "^10.2.0",
     "typescript": "5.1.5"
   },
   "devDependencies": {
+    "@types/navermaps": "^3.6.5",
     "@types/styled-components": "^5.1.26"
   }
 }
